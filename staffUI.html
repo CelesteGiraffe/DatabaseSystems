@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff/Driver's Interface - Pedro's Pizza</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1>Staff/Driver's Interface</h1>
+
+    <!-- Order Assignment Section -->
+    <div class="mt-4">
+      <h2>Order Assignment</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          Order #1 <button class="btn btn-primary btn-sm float-right">Details</button>
+        </li>
+        <!-- More items -->
+      </ul>
+    </div>
+
+    <!-- Vehicle Assignment Section -->
+    <div class="mt-4">
+      <h2>Vehicle Assignment</h2>
+      <form>
+        <div class="form-group">
+          <label for="vehicleSelect">Select Vehicle</label>
+          <select class="form-control" id="vehicleSelect">
+            <!-- Options to be populated from database -->
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <!-- Time Tracking Section -->
+    <div class="mt-4">
+      <h2>Time Tracking</h2>
+      <div class="card">
+        <div class="card-body">
+          <!-- Timer or countdown can go here -->
+          Time remaining: <span id="timeRemaining">15 min</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

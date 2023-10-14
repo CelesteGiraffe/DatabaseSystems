@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Executive's Interface - Pedro's Pizza</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1>Executive's Interface</h1>
+
+    <!-- Business Reports Section -->
+    <div class="mt-4">
+      <h2>Business Reports</h2>
+      <div class="accordion" id="reportAccordion">
+        <div class="card">
+          <div class="card-header" id="monthlyReportHeader">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#monthlyReport" aria-expanded="true" aria-controls="monthlyReport">
+              Monthly Report
+            </button>
+          </div>
+          <div id="monthlyReport" class="collapse show" aria-labelledby="monthlyReportHeader" data-parent="#reportAccordion">
+            <div class="card-body">
+              <!-- Monthly report data -->
+            </div>
+          </div>
+        </div>
+        <!-- Similar cards for other types of reports -->
+      </div>
+    </div>
+
+    <!-- Supplier Management Section -->
+    <div class="mt-4">
+      <h2>Supplier Management</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Supplier ID</th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Populate with supplier data -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Settings Section -->
+    <div class="mt-4">
+      <h2>System Settings</h2>
+      <form>
+        <!-- Form elements for system settings -->
+      </form>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

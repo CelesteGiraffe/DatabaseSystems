@@ -27,11 +27,11 @@
                         <div class="card-body">
                             <h5 class="card-title">Margherita Pizza</h5>
                             <select class="form-control mb-2" id="pizzaSizeSelect" aria-label="Select pizza size">
-                                <option>Large £13</option>
-                                <option>Medium £11</option>
-                                <option>Small £9</option>
+                                <option value="13">Large £13</option>
+                                <option value="11">Medium £11</option>
+                                <option value="9">Small £9</option>
                             </select>
-                            <button class="btn btn-success">add</button>
+                            <button class="btn btn-success" onclick="addToOrder('Margherita Pizza')">add</button>
                         </div>
                     </div>
                 </div>
@@ -64,12 +64,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Margherita Pizza (large)</td>
-                                        <td>3</td>
-                                        <td>39£</td>
-                                    </tr>
-                                    <!-- Additional line items can go here -->
+                                    <!-- No static pizza entry here. It will be populated dynamically by the JavaScript function -->
                                 </tbody>
                             </table>
                         </div>
@@ -120,5 +115,48 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+    function addToOrder(pizzaName) {
+        const sizeSelect = document.getElementById("pizzaSizeSelect");
+        const selectedSize = sizeSelect.options[sizeSelect.selectedIndex].text.split(' ')[0];
+        const price = parseFloat(sizeSelect.value);
+
+        const tableBody = document.querySelector("tbody");
+        let found = false;
+
+        for (let row of tableBody.rows) {
+            if (row.cells[0].textContent === `${pizzaName} (${selectedSize})`) {
+                const qtyCell = row.cells[1];
+                qtyCell.textContent = parseInt(qtyCell.textContent) + 1;
+                row.cells[2].textContent = '£' + (price * parseInt(qtyCell.textContent)).toFixed(2);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            const newRow = tableBody.insertRow();
+            newRow.innerHTML = `
+                <td>${pizzaName} (${selectedSize})</td>
+                <td>1</td>
+                <td>£${price.toFixed(2)}</td>
+            `;
+        }
+
+        updateTotalPrice();
+    }
+
+    function updateTotalPrice() {
+        const tableBody = document.querySelector("tbody");
+        let total = 0;
+
+        for (let row of tableBody.rows) {
+            total += parseFloat(row.cells[2].textContent.slice(1));
+        }
+
+        document.getElementById("totalPrice").textContent = '£' + total.toFixed(2);
+    }
+    </script>
+
 </body>
 </html>

@@ -1,56 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Staff/Driver's Interface - Pedro's Pizza</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container mt-5">
-      <h1>Staff/Driver's Interface</h1>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-      <!-- Order Assignment Section -->
-      <div class="mt-4">
-        <h2>Order Assignment</h2>
-        <ul class="list-group">
-          <li class="list-group-item">
-            Order #1
-            <button class="btn btn-primary btn-sm float-right">Details</button>
-          </li>
-          <!-- More items -->
-        </ul>
-      </div>
+        .container {
+            flex: 1;
+        }
 
-      <!-- Vehicle Assignment Section -->
-      <div class="mt-4">
-        <h2>Vehicle Assignment</h2>
-        <form>
-          <div class="form-group">
-            <label for="vehicleSelect">Select Vehicle</label>
-            <select class="form-control" id="vehicleSelect">
-              <!-- Options to be populated from database -->
-            </select>
-          </div>
-        </form>
-      </div>
+        footer {
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
 
-      <!-- Time Tracking Section -->
-      <div class="mt-4">
-        <h2>Time Tracking</h2>
-        <div class="card">
-          <div class="card-body">
-            <!-- Timer or countdown can go here -->
-            Time remaining: <span id="timeRemaining">15 min</span>
-          </div>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Pedro's Pizza</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#Staff">Staff Section</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#example1">Example 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#example2">Example 2</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-5">
+        <h1>Staff/Driver's Interface</h1>
+
+        <!-- Order Assignment -->
+        <section class="mt-4">
+            <h2>Order Assignment</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Order #1
+                    <button class="btn btn-primary btn-sm float-right" aria-label="View Details">Details</button>
+                </li>
+                <!-- More items can be added here -->
+            </ul>
+        </section>
+
+        <!-- Vehicle Assignment -->
+        <section class="mt-4">
+            <h2>Vehicle Assignment</h2>
+            <form>
+                <div class="form-group">
+                    <label for="vehicleSelect">Select Vehicle</label>
+                    <select class="form-control" id="vehicleSelect">
+                        <!-- Options to be populated from database -->
+                        <option>Select a vehicle...</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+
+        <!-- Time Tracking -->
+        <section class="mt-4">
+            <h2>Time Tracking</h2>
+            <div class="card">
+                <div class="card-body">
+                    <!-- Timer or countdown can be placed here -->
+                    Time remaining: <span id="timeRemaining">15 min</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark text-center text-white">
+        <div class="container">
+            <span>© 2023 Pedro's Pizza. All Rights Reserved.</span>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  </body>
+</body>
+
 </html>

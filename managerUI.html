@@ -3,16 +3,60 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Manager's Interface - Pedro's Pizza</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        footer {
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container mt-5">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Pedro's Pizza - Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#staff-management">Staff Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#order-tracking">Order Tracking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#branch-information">Branch Information</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-5">
         <h1>Manager's Interface</h1>
 
         <!-- Dashboard Section -->
-        <div class="row mt-4">
+        <section id="dashboard" class="row mt-4">
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">Total Sales</div>
@@ -21,8 +65,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Similar cards for stock levels and staff performance -->
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">Stock Levels</div>
@@ -31,7 +73,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">Staff Performance</div>
@@ -40,10 +81,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Staff Management Section -->
-        <div class="mt-4">
+        <section id="staff-management" class="mt-4">
             <h2>Staff Management</h2>
             <table class="table">
                 <thead>
@@ -55,7 +96,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Sample staff data -->
                     <tr>
                         <td>001</td>
                         <td>John Doe</td>
@@ -70,10 +110,10 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </section>
 
         <!-- Order Tracking Section -->
-        <div class="mt-4">
+        <section id="order-tracking" class="mt-4">
             <h2>Order Tracking</h2>
             <ul class="list-group">
                 <li class="list-group-item">
@@ -86,10 +126,10 @@
                     Order #3 <span class="badge badge-danger">Delayed</span>
                 </li>
             </ul>
-        </div>
+        </section>
 
         <!-- Branch Information Section -->
-        <div class="mt-4">
+        <section id="branch-information" class="mt-4">
             <h2>Branch Information</h2>
             <div class="card">
                 <div class="card-header">Branch Information</div>
@@ -99,8 +139,15 @@
                     <strong>Email:</strong> branch@pedrospizza.com
                 </div>
             </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark text-center text-white">
+        <div class="container">
+            <span>© 2023 Pedro's Pizza. All Rights Reserved.</span>
         </div>
-    </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

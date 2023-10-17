@@ -1,181 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Customer's Interface - Pedro's Pizza</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
 
-        .container {
-            flex: 1;
-        }
+      .container {
+        flex: 1;
+      }
 
-        footer {
-            position: sticky;
-            bottom: 0;
-            width: 100%;
-        }
+      footer {
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Pedro's Pizza</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#pizza-selection">Pizza Selection</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#example1">Example 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#example2">Example 2</a>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#">Pedro's Pizza</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Customer UI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="staffUI.html">Staff UI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="managerUI.html">Manager UI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ExecutiveUI.html">Executive UI</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Main Content -->
     <main class="container mt-5">
-        <h1>Welcome to Pedro's Pizza!</h1>
+      <h1>Welcome to Pedro's Pizza!</h1>
 
-        <!-- Pizza Selection Section -->
-        <section id="pizza-selection" class="mt-4">
-            <h2>Pizza Selection</h2>
-            <div class="row">
-                <!-- Margherita Pizza -->
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="margpizza.jpeg" class="card-img-top" alt="Margherita Pizza" />
-                        <div class="card-body">
-                            <h5 class="card-title">Margherita Pizza</h5>
-                            <select class="form-control mb-2" id="pizzaSizeSelect" aria-label="Select pizza size">
-                                <option value="13">Large £13</option>
-                                <option value="11">Medium £11</option>
-                                <option value="9">Small £9</option>
-                            </select>
-                            <button class="btn btn-success" onclick="addToOrder('Margherita Pizza')">Add to Order</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- More cards for other pizza options -->
+      <!-- Pizza Selection Section -->
+      <section id="pizza-selection" class="mt-4">
+        <h2>Pizza Selection</h2>
+        <div class="row">
+          <!-- Margherita Pizza -->
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="margpizza.jpeg"
+                class="card-img-top"
+                alt="Margherita Pizza"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Margherita Pizza</h5>
+                <select
+                  class="form-control mb-2"
+                  id="pizzaSizeSelect"
+                  aria-label="Select pizza size"
+                >
+                  <option value="13">Large £13</option>
+                  <option value="11">Medium £11</option>
+                  <option value="9">Small £9</option>
+                </select>
+                <button
+                  class="btn btn-success"
+                  onclick="addToOrder('Margherita Pizza')"
+                >
+                  Add to Order
+                </button>
+              </div>
             </div>
-        </section>
+          </div>
+          <!-- More cards for other pizza options -->
+        </div>
+      </section>
 
-        <!-- Order Placement Section -->
-        <section id="order-placement" class="mt-4">
-            <h2>Place Your Order</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- Order Details -->
-                    <h3>Your Order Summary</h3>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Item</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Dynamically populated by JavaScript function -->
-                        </tbody>
-                    </table>
-                    <div class="form-group">
-                        <label>Total Price:</label>
-                        <span id="totalPrice">£0</span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Place Order</button>
-                </div>
-
-                <div class="col-md-6">
-                    <!-- Customer Details -->
-                    <h3>Customer Details</h3>
-                    <form id="customerDetails">
-                        <div class="form-group">
-                            <label for="nameInput">Name</label>
-                            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required />
-                        </div>
-                        <!-- Other form fields -->
-                    </form>
-                </div>
+      <!-- Order Placement Section -->
+      <section id="order-placement" class="mt-4">
+        <h2>Place Your Order</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Order Details -->
+            <h3>Your Order Summary</h3>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Dynamically populated by JavaScript function -->
+              </tbody>
+            </table>
+            <div class="form-group">
+              <label>Total Price:</label>
+              <span id="totalPrice">£0</span>
             </div>
-        </section>
+            <button type="submit" class="btn btn-primary">Place Order</button>
+          </div>
 
-        <!-- Order Tracking Section -->
-        <section id="order-tracking" class="mt-4">
-            <h2>Track Your Order</h2>
-            <div class="alert alert-success" role="alert">
-                Your order is being prepared!
-            </div>
-        </section>
+          <div class="col-md-6">
+            <!-- Customer Details -->
+            <h3>Customer Details</h3>
+            <form id="customerDetails">
+              <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nameInput"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <!-- Other form fields -->
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Order Tracking Section -->
+      <section id="order-tracking" class="mt-4">
+        <h2>Track Your Order</h2>
+        <div class="alert alert-success" role="alert">
+          Your order is being prepared!
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 bg-dark text-center text-white">
-        <div class="container">
-            <span>© 2023 Pedro's Pizza. All Rights Reserved.</span>
-        </div>
+      <div class="container">
+        <span>© 2023 Pedro's Pizza. All Rights Reserved.</span>
+      </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script>
-        function addToOrder(pizzaName) {
-            const sizeSelect = document.getElementById("pizzaSizeSelect");
-            const selectedSize = sizeSelect.options[sizeSelect.selectedIndex].text.split(' ')[0];
-            const price = parseFloat(sizeSelect.value);
+      function addToOrder(pizzaName) {
+        const sizeSelect = document.getElementById("pizzaSizeSelect");
+        const selectedSize =
+          sizeSelect.options[sizeSelect.selectedIndex].text.split(" ")[0];
+        const price = parseFloat(sizeSelect.value);
 
-            const tableBody = document.querySelector("tbody");
-            let found = false;
+        const tableBody = document.querySelector("tbody");
+        let found = false;
 
-            for (let row of tableBody.rows) {
-                if (row.cells[0].textContent === `${pizzaName} (${selectedSize})`) {
-                    const qtyCell = row.cells[1];
-                    qtyCell.textContent = parseInt(qtyCell.textContent) + 1;
-                    row.cells[2].textContent = '£' + (price * parseInt(qtyCell.textContent)).toFixed(2);
-                    found = true;
-                    break;
-                }
-            }
+        for (let row of tableBody.rows) {
+          if (row.cells[0].textContent === `${pizzaName} (${selectedSize})`) {
+            const qtyCell = row.cells[1];
+            qtyCell.textContent = parseInt(qtyCell.textContent) + 1;
+            row.cells[2].textContent =
+              "£" + (price * parseInt(qtyCell.textContent)).toFixed(2);
+            found = true;
+            break;
+          }
+        }
 
-            if (!found) {
-                const newRow = tableBody.insertRow();
-                newRow.innerHTML = `
+        if (!found) {
+          const newRow = tableBody.insertRow();
+          newRow.innerHTML = `
                     <td>${pizzaName} (${selectedSize})</td>
                     <td>1</td>
                     <td>£${price.toFixed(2)}</td>
                 `;
-            }
-
-            updateTotalPrice();
         }
 
-        function updateTotalPrice() {
-            const tableBody = document.querySelector("tbody");
-            let total = 0;
+        updateTotalPrice();
+      }
 
-            for (let row of tableBody.rows) {
-                total += parseFloat(row.cells[2].textContent.slice(1));
-            }
+      function updateTotalPrice() {
+        const tableBody = document.querySelector("tbody");
+        let total = 0;
 
-            document.getElementById("totalPrice").textContent = '£' + total.toFixed(2);
+        for (let row of tableBody.rows) {
+          total += parseFloat(row.cells[2].textContent.slice(1));
         }
+
+        document.getElementById("totalPrice").textContent =
+          "£" + total.toFixed(2);
+      }
     </script>
-
-</body>
+  </body>
 </html>

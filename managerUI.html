@@ -47,14 +47,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="customerUI.html">Customer UI</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="staffUI.html">Staff UI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Manager UI</a>
+            <a class="nav-link active" href="#">Manager UI</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="ExecutiveUI.html">Executive UI</a>
@@ -67,6 +67,18 @@
     <main class="container mt-5">
       <h1>Manager's Interface</h1>
 
+      <!-- Branch Information Section -->
+      <section id="branch-information" class="mt-4">
+        <h2>Branch Selected</h2>
+        <div class="card">
+          <div class="card-header">Branch Information</div>
+          <div class="card-body">
+            <strong>Address:</strong> 123 Pizza St., Food City, 12345 <br />
+            <strong>Phone:</strong> (123) 456-7890 <br />
+            <strong>Email:</strong> branch@pedrospizza.com
+          </div>
+        </div>
+      </section>
       <!-- Dashboard Section -->
       <section id="dashboard" class="row mt-4">
         <div class="col-md-4">
@@ -92,7 +104,7 @@
       <!-- Staff Management Section -->
       <section id="staff-management" class="mt-4">
         <h2>Staff Management</h2>
-        <table class="table">
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th>Staff ID</th>
@@ -105,17 +117,46 @@
             <tr>
               <td>001</td>
               <td>John Doe</td>
-              <td>$20/hr</td>
-              <td><button class="btn btn-sm btn-primary">Edit</button></td>
+              <td>£20/hr</td>
+              <td>
+                <button class="btn btn-sm btn-primary">Edit</button>
+                <button class="btn btn-sm btn-secondary">More Info</button>
+              </td>
             </tr>
             <tr>
               <td>002</td>
               <td>Jane Smith</td>
-              <td>$18/hr</td>
-              <td><button class="btn btn-sm btn-primary">Edit</button></td>
+              <td>£18/hr</td>
+              <td>
+                <button class="btn btn-sm btn-primary">Edit</button>
+                <button class="btn btn-sm btn-secondary">More Info</button>
+              </td>
             </tr>
           </tbody>
         </table>
+        <h3>Staff Selected</h3>
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-bordered">
+              <tr>
+                <th>Staff ID</th>
+                <th>Name</th>
+                <th>Wage</th>
+                <th>Violation level</th>
+                <th>Sick Days taken</th>
+                <th>Works at (branch)</th>
+              </tr>
+              <tr>
+                <td>001</td>
+                <td>John Doe</td>
+                <td>£20/hr</td>
+                <td>Level 2</td>
+                <td>5</td>
+                <td>Food City</td>
+              </tr>
+            </table>
+          </div>
+        </div>
       </section>
 
       <!-- Order Tracking Section -->
@@ -132,19 +173,6 @@
             Order #3 <span class="badge badge-danger">Delayed</span>
           </li>
         </ul>
-      </section>
-
-      <!-- Branch Information Section -->
-      <section id="branch-information" class="mt-4">
-        <h2>Branch Information</h2>
-        <div class="card">
-          <div class="card-header">Branch Information</div>
-          <div class="card-body">
-            <strong>Address:</strong> 123 Pizza St., Food City, 12345 <br />
-            <strong>Phone:</strong> (123) 456-7890 <br />
-            <strong>Email:</strong> branch@pedrospizza.com
-          </div>
-        </div>
       </section>
     </main>
 
